@@ -1,0 +1,83 @@
+.scoreboard_background {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  padding: 15px 30px 15px 30px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+@media screen and (min-width: 700px) {
+  .scoreboard_background {
+    padding: 30px 60px 30px 60px;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+  }
+}
+
+.list_background {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list_item {
+  font-family: 'Bree Serif';
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 700px) {
+  .list_item {
+    font-size: 20px;
+  }
+}
+
+.sub_scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 2px;
+  padding: 5px 15px 5px 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 700px) {
+  .sub_scoreboard {
+    padding: 5px 30px 5px 30px;
+  }
+}
+
+.score_title {
+  font-family: 'Bree Serif';
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  .score_title {
+    font-size: 18px;
+  }
+}
+
+.score {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  .score {
+    font-size: 25px;
+  }
+}
