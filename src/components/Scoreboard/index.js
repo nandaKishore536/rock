@@ -12,7 +12,7 @@ const Scoreboard = props => {
 
       <div className="sub_scoreboard">
         <p className="score_title">Score</p>
-        <p className="score">{Score}</p>
+        <p className="s">{Score}</p>
       </div>
     </div>
   )

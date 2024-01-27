@@ -1,13 +1,12 @@
 import './index.css'
 
 const Result = props => {
-  const {computer, player, playAgain, onDecreaseScore, onIncreaseScore} = props
+  const {computer, player, playAgain} = props
 
   const playerUrl = player.imageUrl
   const computerUrl = computer.imageUrl
   const computerId = computer.id
   const playerId = player.id
-
   let x = ''
   const result = () => {
     if (playerId === computerId) {
@@ -21,23 +20,14 @@ const Result = props => {
     } else {
       x = 'YOU WON'
     }
+    return x
   }
 
   const onPress = () => {
     playAgain()
   }
 
-  result()
-
-  const getScore = () => {
-    if (x === 'YOU WON') {
-      onIncreaseScore()
-    } else if (x === 'YOU LOSE') {
-      onDecreaseScore()
-    }
-  }
-
-  getScore()
+  const y = result()
 
   return (
     <div className="result_con">
@@ -54,7 +44,7 @@ const Result = props => {
       </div>
 
       <div className="result_con2">
-        <p className="result">{x}</p>
+        <p className="result">{y}</p>
         <button type="button" className="play_again" onClick={onPress}>
           PLAY AGAIN
         </button>

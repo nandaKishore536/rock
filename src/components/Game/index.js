@@ -32,33 +32,95 @@ class Game extends Component {
   state = {
     Score: 0,
     computerChoice: choicesList[Math.floor(Math.random() * choicesList.length)],
-    playerChoice: choicesList[0],
+    playerChoice: {},
     showResult: false,
   }
 
   onParts = () => {
-    this.setState({playerChoice: choicesList[0], showResult: true})
+    const {computerChoice} = this.state
+
+    const computerId = computerChoice.id
+
+    const x = 'ROCK'
+
+    if (computerId === 'PAPER' && x === 'ROCK') {
+      this.setState(prevState => ({
+        playerChoice: choicesList[0],
+        showResult: true,
+        Score: prevState.Score - 1,
+      }))
+    } else if (computerId === 'ROCK' && x === 'ROCK') {
+      this.setState({
+        playerChoice: choicesList[0],
+        showResult: true,
+      })
+    } else {
+      this.setState(prevState => ({
+        playerChoice: choicesList[0],
+        showResult: true,
+        Score: prevState.Score + 1,
+      }))
+    }
   }
 
   onParts1 = () => {
-    this.setState({playerChoice: choicesList[1], showResult: true})
+    const {computerChoice} = this.state
+
+    const computerId = computerChoice.id
+
+    const x = 'SCISSORS'
+
+    if (computerId === 'ROCK' && x === 'SCISSORS') {
+      this.setState(prevState => ({
+        playerChoice: choicesList[1],
+        showResult: true,
+        Score: prevState.Score - 1,
+      }))
+    } else if (computerId === 'SCISSORS' && x === 'SCISSORS') {
+      this.setState({
+        playerChoice: choicesList[1],
+        showResult: true,
+      })
+    } else {
+      this.setState(prevState => ({
+        playerChoice: choicesList[1],
+        showResult: true,
+        Score: prevState.Score + 1,
+      }))
+    }
   }
 
   onParts2 = () => {
-    this.setState({playerChoice: choicesList[2], showResult: true})
-  }
+    const {computerChoice} = this.state
 
-  onIncreaseScore = () => {
-    this.setState({Score: 1})
-  }
+    const computerId = computerChoice.id
 
-  onDecreaseScore = () => {
-    this.setState({Score: 1})
+    const x = 'PAPER'
+
+    if (computerId === 'SCISSORS' && x === 'PAPER') {
+      this.setState(prevState => ({
+        playerChoice: choicesList[2],
+        showResult: true,
+        Score: prevState.Score - 1,
+      }))
+    } else if (computerId === 'PAPER' && x === 'PAPER') {
+      this.setState({
+        playerChoice: choicesList[2],
+        showResult: true,
+      })
+    } else {
+      this.setState(prevState => ({
+        playerChoice: choicesList[2],
+        showResult: true,
+        Score: prevState.Score + 1,
+      }))
+    }
   }
 
   playAgain = () => {
     this.setState(prevState => ({
       showResult: !prevState.showResult,
+
       computerChoice:
         choicesList[Math.floor(Math.random() * choicesList.length)],
     }))
@@ -107,8 +169,6 @@ class Game extends Component {
       <Result
         computer={computerChoice}
         player={playerChoice}
-        onDecreaseScore={this.onDecreaseScore}
-        onIncreaseScore={this.onIncreaseScore}
         playAgain={this.playAgain}
       />
     )

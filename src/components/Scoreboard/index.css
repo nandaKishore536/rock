@@ -59,7 +59,7 @@
 }
 
 .score_title {
-  font-family: 'Bree Serif';
+  font-family: 'Roboto';
   font-size: 14px;
   font-weight: 500;
 }
@@ -70,14 +70,15 @@
   }
 }
 
-.score {
+.s {
   font-family: 'Roboto';
   font-size: 18px;
   font-weight: 500;
 }
 
 @media screen and (min-width: 700px) {
-  .score {
+  .s {
     font-size: 25px;
+    font-family: 'Roboto';
   }
 }
